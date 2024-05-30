@@ -31,3 +31,18 @@ function getComputerChoice(choice, randomInt) {
 // console.log(getComputerChoice(choice, randomInt))
 
 // Step 3: 
+// SET humanInput equal to prompt method
+//  PASS message, options passed
+// CALL getHumanChoice function
+//  PASS humanInput
+//  RETURN toUpperCase method for humanInput 
+
+let humanInput = prompt("Rock? Paper? or Scizzors? MAKE YOUR CHOICE.", "Rock");
+
+function getHumanChoice (humanInput) {
+    return humanInput.charAt(0).toUpperCase() + humanInput.slice(1).toLowerCase();
+}
+
+// Test
+
+// console.log(getHumanChoice(humanInput))
