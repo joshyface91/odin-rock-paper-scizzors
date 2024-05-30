@@ -1,32 +1,33 @@
-// console.log("Hello World")
-
 // Step 1: setup docs
 
 // Step 2: build code for computer logic
-// SET variable (choice) equal to Math.random
+// SET array choice equal to three options
+// SET variable randomInt equal to getRandomInt function
+// CALL function getRandomInt
 // CALL function getComputerChoice
-// PASS variable (choice)
-//  IF 0 =< choice < .33 THEN
-//      RETURN "Rock"
-//      ELSEIF .33 =< choice < .66 THEN
-//          RETURN "Paper"
-//      ELSEIF .66 =< choice < 1 THEN
-//          RETURN "Scizzors"
-//  ENDIF
+//  PASS parameters (choice, randomInt)
+//  RETURN choice[randomInt]
 
-let choice = Math.random()
+const choice = [
+    "Rock",
+    "Paper",
+    "Scizzors"
+];
 
-function getComputerChoice(choice) {
-    if (0 <= choice < .33) {
-        return "Rock";
-    } else if (.33 <= choice < .66) {
-        return "Paper";
-    } else {
-        return "Scizzors";
-    }
+let randomInt = getRandomInt();
+
+function getRandomInt () {
+    return Math.floor(Math.random() * 3);
 }
 
-console.log(choice)
-console.log(getComputerChoice(choice))
+function getComputerChoice(choice, randomInt) {
+        return choice[randomInt];
+}
 
-// STEP 3: 
+// Test
+
+// console.log(randomInt)
+
+// console.log(getComputerChoice(choice, randomInt))
+
+// Step 3: 
