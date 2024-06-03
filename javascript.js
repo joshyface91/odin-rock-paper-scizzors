@@ -24,12 +24,6 @@ function getComputerChoice(choice, randomInt) {
         return choice[randomInt];
 }
 
-// Test
-
-// console.log(randomInt)
-
-// console.log(getComputerChoice(choice, randomInt));
-
 // Step 3: human choice
 // SET humanInput equal to prompt method
 //  PASS message, options passed
@@ -37,15 +31,9 @@ function getComputerChoice(choice, randomInt) {
 //  PASS humanInput
 //  RETURN toUpperCase method for humanInput 
 
-// let humanInput = prompt("Rock? Paper? or Scizzors? MAKE YOUR CHOICE.", "Rock"); Moved inside playGame function
-
 function getHumanChoice (humanInput) {
     return humanInput.charAt(0).toUpperCase() + humanInput.slice(1).toLowerCase();
 }
-
-// Test
-
-// console.log(getHumanChoice(humanInput));
 
 // Step 4: score variables
 // SET humanScore and computerScore equal to 0
@@ -74,17 +62,6 @@ function getHumanChoice (humanInput) {
 //  ELSE
 //      RETURN "Input Error. Try again."
 
-// Moved inside of playGame function
-
-
-
-// Test
-
-// const round = playRound(humanChoice, computerChoice);
-
-// console.log("You: "+humanScore);
-// console.log("Them: "+computerScore);
-
 // Step 6:
 // SET playRound equal to round variable
 // CALL function playGame 
@@ -97,15 +74,6 @@ function playGame (choice) {
     let humanScore = 0;
     let computerScore = 0;
     let roundCount = 1;
-    // function finalScore (humanScore, computerScore) {
-    //     if (humanScore < computerScore) {
-    //         return console.log("Ouch... you lost to a machine...");
-    //     } else if (humanScore > computerScore) {
-    //         return console.log("Gee Willackers, you're  a winner!");
-    //     } else {
-    //         return console.log("It seems that you've only managed to tie it up, mate.");
-    //     }
-    // }
     function playRound (humanChoice, computerChoice) {
         roundCount++
         if (humanChoice == computerChoice) {
@@ -132,7 +100,6 @@ function playGame (choice) {
             return console.log("Input Error. Try again.");
         }
     }
-    // playRound(humanChoice, computerChoice);
     if (roundCount < 6) {
         let randomInt = getRandomInt();
         let computerChoice = getComputerChoice(choice,randomInt);
@@ -193,11 +160,6 @@ function playGame (choice) {
     } else {
         return console.log("And the final score: You - "+humanScore+"; Them - "+computerScore);
     }
-    // finalScore(humanScore, computerScore);
 }
-
-
-
-// Test
 
 playGame (choice);
