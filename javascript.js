@@ -28,7 +28,7 @@ function getComputerChoice(choice, randomInt) {
 
 // console.log(randomInt)
 
-console.log(getComputerChoice(choice, randomInt))
+// console.log(getComputerChoice(choice, randomInt));
 
 // Step 3: human choice
 // SET humanInput equal to prompt method
@@ -37,7 +37,7 @@ console.log(getComputerChoice(choice, randomInt))
 //  PASS humanInput
 //  RETURN toUpperCase method for humanInput 
 
-let humanInput = prompt("Rock? Paper? or Scizzors? MAKE YOUR CHOICE.", "Rock");
+// let humanInput = prompt("Rock? Paper? or Scizzors? MAKE YOUR CHOICE.", "Rock"); Moved inside playGame function
 
 function getHumanChoice (humanInput) {
     return humanInput.charAt(0).toUpperCase() + humanInput.slice(1).toLowerCase();
@@ -45,13 +45,12 @@ function getHumanChoice (humanInput) {
 
 // Test
 
-console.log(getHumanChoice(humanInput))
+// console.log(getHumanChoice(humanInput));
 
 // Step 4: score variables
 // SET humanScore and computerScore equal to 0
 
-let humanScore = 0;
-let computerScore = 0;
+// Moved inside of playGame function
 
 // Step 5: playing a round
 // SET humanChoice equal to getHumanChoice
@@ -75,40 +74,130 @@ let computerScore = 0;
 //  ELSE
 //      RETURN "Input Error. Try again."
 
-const humanChoice = getHumanChoice(humanInput);
-const computerChoice = getComputerChoice(choice, randomInt);
+// Moved inside of playGame function
 
-function playRound (humanChoice, computerChoice) {
-    if (humanChoice == computerChoice) {
-        return console.log("It is a draw, sir.");
-    } else if (humanChoice == "Rock" && computerChoice == "Paper") {
-        computerScore++
-        return console.log("Defeat... Rock is smothered by Paper.");
-    } else if (humanChoice == "Rock" && computerChoice == "Scizzors") {
-        humanScore++
-        return console.log("Victory! Rock crushes Scizzors.");
-    } else if (humanChoice == "Paper" && computerChoice == "Scizzors") {
-        computerScore++
-        return console.log("Defeat... Paper is sliced by Scizzors.");
-    } else if (humanChoice == "Paper" && computerChoice == "Rock") {
-        humanScore++
-        return console.log("Victory! Paper smothers Rock.");
-    } else if (humanChoice == "Scizzors" && computerChoice == "Rock") {
-        computerScore++
-        return console.log("Defeat... Scizzors are crushed by Rock.");
-    } else if (humanChoice == "Scizzors" && computerChoice == "Paper") {
-        humanScore++
-        return console.log("Victory! Scizzors slice Paper.");
-    } else {
-        return console.log("Input Error. Try again.");
-    }
-}
+
 
 // Test
 
-playRound(humanChoice, computerChoice);
+// const round = playRound(humanChoice, computerChoice);
 
-console.log("You: "+humanScore);
-console.log("Them: "+computerScore);
+// console.log("You: "+humanScore);
+// console.log("Them: "+computerScore);
 
 // Step 6:
+// SET playRound equal to round variable
+// CALL function playGame 
+//  PASS round
+//  IF roundCount equals 5
+//      RETURN a console log that prints the final score
+//  ELSE run playGame again
+
+function playGame (choice) {
+    let humanScore = 0;
+    let computerScore = 0;
+    let roundCount = 1;
+    // function finalScore (humanScore, computerScore) {
+    //     if (humanScore < computerScore) {
+    //         return console.log("Ouch... you lost to a machine...");
+    //     } else if (humanScore > computerScore) {
+    //         return console.log("Gee Willackers, you're  a winner!");
+    //     } else {
+    //         return console.log("It seems that you've only managed to tie it up, mate.");
+    //     }
+    // }
+    function playRound (humanChoice, computerChoice) {
+        roundCount++
+        if (humanChoice == computerChoice) {
+            return console.log("It is a draw, sir.");
+        } else if (humanChoice == "Rock" && computerChoice == "Paper") {
+            computerScore++
+            return console.log("Defeat... Rock is smothered by Paper.");
+        } else if (humanChoice == "Rock" && computerChoice == "Scizzors") {
+            humanScore++
+            return console.log("Victory! Rock crushes Scizzors.");
+        } else if (humanChoice == "Paper" && computerChoice == "Scizzors") {
+            computerScore++
+            return console.log("Defeat... Paper is sliced by Scizzors.");
+        } else if (humanChoice == "Paper" && computerChoice == "Rock") {
+            humanScore++
+            return console.log("Victory! Paper smothers Rock.");
+        } else if (humanChoice == "Scizzors" && computerChoice == "Rock") {
+            computerScore++
+            return console.log("Defeat... Scizzors are crushed by Rock.");
+        } else if (humanChoice == "Scizzors" && computerChoice == "Paper") {
+            humanScore++
+            return console.log("Victory! Scizzors slice Paper.");
+        } else {
+            return console.log("Input Error. Try again.");
+        }
+    }
+    // playRound(humanChoice, computerChoice);
+    if (roundCount < 6) {
+        let randomInt = getRandomInt();
+        let computerChoice = getComputerChoice(choice,randomInt);
+        let humanInput = prompt("Rock? Paper? or Scizzors? MAKE YOUR CHOICE.", "Rock");
+        let humanChoice = getHumanChoice(humanInput);
+        console.log("Round "+roundCount);
+        playRound(humanChoice, computerChoice);
+    } else {
+        return console.log("And the final score: You - "+humanScore+"; Them - "+computerScore);
+    }
+    if (roundCount < 6) {
+        let randomInt = getRandomInt();
+        let computerChoice = getComputerChoice(choice,randomInt);
+        let humanInput = prompt("Rock? Paper? or Scizzors? MAKE YOUR CHOICE.", "Rock");
+        let humanChoice = getHumanChoice(humanInput);
+        console.log("Round "+roundCount);
+        playRound(humanChoice, computerChoice);
+    } else {
+        return console.log("And the final score: You - "+humanScore+"; Them - "+computerScore);
+    }
+    if (roundCount < 6) {
+        let randomInt = getRandomInt();
+        let computerChoice = getComputerChoice(choice,randomInt);
+        let humanInput = prompt("Rock? Paper? or Scizzors? MAKE YOUR CHOICE.", "Rock");
+        let humanChoice = getHumanChoice(humanInput);
+        console.log("Round "+roundCount);
+        playRound(humanChoice, computerChoice);
+    } else {
+        return console.log("And the final score: You - "+humanScore+"; Them - "+computerScore);
+    }
+    if (roundCount < 6) {
+        let randomInt = getRandomInt();
+        let computerChoice = getComputerChoice(choice,randomInt);
+        let humanInput = prompt("Rock? Paper? or Scizzors? MAKE YOUR CHOICE.", "Rock");
+        let humanChoice = getHumanChoice(humanInput);
+        console.log("Round "+roundCount);
+        playRound(humanChoice, computerChoice);
+    } else {
+        return console.log("And the final score: You - "+humanScore+"; Them - "+computerScore);
+    }
+    if (roundCount < 6) {
+        let randomInt = getRandomInt();
+        let computerChoice = getComputerChoice(choice,randomInt);
+        let humanInput = prompt("Rock? Paper? or Scizzors? MAKE YOUR CHOICE.", "Rock");
+        let humanChoice = getHumanChoice(humanInput);
+        console.log("Round "+roundCount);
+        playRound(humanChoice, computerChoice);
+    } else {
+        return console.log("And the final score: You - "+humanScore+"; Them - "+computerScore);
+    }
+    if (roundCount < 6) {
+        let randomInt = getRandomInt();
+        let computerChoice = getComputerChoice(choice,randomInt);
+        let humanInput = prompt("Rock? Paper? or Scizzors? MAKE YOUR CHOICE.", "Rock");
+        let humanChoice = getHumanChoice(humanInput);
+        console.log("Round "+roundCount);
+        playRound(humanChoice, computerChoice);
+    } else {
+        return console.log("And the final score: You - "+humanScore+"; Them - "+computerScore);
+    }
+    // finalScore(humanScore, computerScore);
+}
+
+
+
+// Test
+
+playGame (choice);
