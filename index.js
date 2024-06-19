@@ -62,9 +62,9 @@ function playRound (choice, humanChoice) {
 
 function evaluateScore (humanScore, computerScore) {
     if ((humanScore === 5 | computerScore === 5) && humanScore > computerScore) {
-        window.location = "/pages/win.html";
+        window.location = "pages/win.html";
     } else if ((humanScore === 5 | computerScore === 5) && humanScore < computerScore) {
-        window.location = "/pages/lose.html";
+        window.location = "pages/lose.html";
     } else {
         return;
     }
