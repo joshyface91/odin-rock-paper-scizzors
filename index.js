@@ -113,7 +113,7 @@ window.onload = function() {
     const roundCount = document.querySelector("#round-count");
     const returnHome = document.querySelector(".logo");
     returnHome.addEventListener("click", () => {
-        window.location = "index.html";
+        window.location = "/";
     });
 }
 
