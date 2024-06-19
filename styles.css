@@ -1,5 +1,6 @@
 body {
     font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #B7BDC4;
     padding: 0;
     margin: 0;
 }
@@ -11,7 +12,7 @@ ul {
 .header {
     display: flex;
     justify-content: center;
-    background-color: #371f29;
+    background-color: #020202;
     color: #E5E7EB;
     font-size: 18px;
     gap: 700px;
@@ -26,12 +27,13 @@ ul {
 }
 
 .logo {
-    background-color: #371f29;
+    background-color: #020202;
     font-size: 24px;
-    color: #F9FAF8;
+    color: #1F2937;
     font-weight: 900;
     border: none;
     outline: none;
+    cursor: pointer;
 }
 
 .info h2 {
@@ -61,13 +63,14 @@ ul {
     object-fit: cover;
     border: solid 5px #371f29;
     border-radius: 15px;
+    cursor: pointer;
 }
 
 .info {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    padding: 40px 0px 130px 0px;
+    padding: 40px 0px 30px 0px;
     color: #1F2937;
 }
 
@@ -84,6 +87,36 @@ ul {
     width: 200px;
     gap: 20px;
     text-align: center;
+}
+
+#round-count {
+    text-align: center;
+}
+
+.tally-field * {
+    height: 70px;
+    margin-bottom: 50px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 70px;
+}
+
+#tally-user {
+    border: solid 2px #371f29;
+    border-radius: 15px;
+    width: 300px;
+}
+
+#tally-announcement {
+    border: solid 2px #371f29;
+    border-radius: 15px;
+    width: 600px;
+}
+
+#tally-computer {
+    border: solid 2px #371f29;
+    border-radius: 15px;
+    width: 300px;
 }
 
 .quote {
