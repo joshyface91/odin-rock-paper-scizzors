@@ -62,9 +62,9 @@ function playRound (choice, humanChoice) {
 
 function evaluateScore (humanScore, computerScore) {
     if ((humanScore === 5 | computerScore === 5) && humanScore > computerScore) {
-        window.location = "pages/win.html";
+        window.location = "win.html";
     } else if ((humanScore === 5 | computerScore === 5) && humanScore < computerScore) {
-        window.location = "pages/lose.html";
+        window.location = "lose.html";
     } else {
         return;
     }
@@ -116,8 +116,3 @@ window.onload = function() {
         window.location = "/";
     });
 }
-
-// let finalMessage = sessionStorage.getItem("announce");
-
-
-// playGame (humanScore, computerScore);

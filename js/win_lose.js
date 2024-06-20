@@ -6,7 +6,7 @@ let tallyComputer = document.querySelector("#tally-computer");
 window.onload = function () {
     const returnHome = document.querySelector(".logo");
     returnHome.addEventListener("click", () => {
-        window.location = "../index.html";
+        window.location = "/";
     });
     
     let finalMessage = sessionStorage.getItem("finalMessage");
