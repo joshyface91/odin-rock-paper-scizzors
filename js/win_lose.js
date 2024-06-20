@@ -6,7 +6,7 @@ let tallyComputer = document.querySelector("#tally-computer");
 window.onload = function () {
     const returnHome = document.querySelector(".logo");
     returnHome.addEventListener("click", () => {
-        window.location = "odin-rock-paper-scizzors/";
+        window.location = "https://joshyface91.github.io/odin-rock-paper-scizzors/";
     });
     
     let finalMessage = sessionStorage.getItem("finalMessage");
