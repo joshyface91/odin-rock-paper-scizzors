@@ -113,6 +113,6 @@ window.onload = function() {
     const roundCount = document.querySelector("#round-count");
     const returnHome = document.querySelector(".logo");
     returnHome.addEventListener("click", () => {
-        window.location = "odin-rock-paper-scizzors/";
+        window.location = "https://joshyface91.github.io/odin-rock-paper-scizzors/";
     });
 }
